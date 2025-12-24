@@ -33,6 +33,8 @@ h1 {
     text-align: center;
     width: 85%; 
     max-width: 500px;
+    position: relative; /* Helps organize stacking order */
+    z-index: 10;
 }
 
 #result-box {
@@ -123,11 +125,25 @@ button:disabled {
     opacity: 0.8;
     pointer-events: none;
     animation: fall linear infinite;
+    z-index: 1; /* Behind the container */
 }
 
 @keyframes fall {
     to { transform: translateY(110vh); }
 }
 
-
-
+/* --- WATERMARK / COPYRIGHT --- */
+.watermark {
+    position: fixed;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4); /* Faded white */
+    font-family: 'Courier New', Courier, monospace; /* Tech look */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    pointer-events: none; /* Clicks go through it */
+    z-index: 100;
+}
