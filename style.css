@@ -1,0 +1,133 @@
+/* --- CORE STYLES --- */
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, #0f4d19, #062e0d); /* Christmas Green */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+h1 {
+    color: #ffd700; /* Gold */
+    text-shadow: 2px 2px 4px #000;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    padding: 0 10px;
+}
+
+/* Responsive Container */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    text-align: center;
+    width: 85%; 
+    max-width: 500px;
+}
+
+#result-box {
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 4px 4px 0px #c0392b; /* Red Shadow */
+    transition: transform 0.2s;
+}
+
+.currency {
+    font-size: 0.5em;
+    vertical-align: top;
+    margin-right: 5px;
+    opacity: 0.8;
+}
+
+button {
+    background: linear-gradient(to bottom, #e74c3c, #c0392b); /* Red */
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.1s, box-shadow 0.1s;
+    width: 80%;
+    max-width: 300px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.message {
+    margin-top: 15px;
+    color: #ffeaa7;
+    font-style: italic;
+    min-height: 3em;
+    line-height: 1.4;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Desktop/Laptop */
+@media (min-width: 769px) {
+    h1 { font-size: 3rem; }
+    #result-box { font-size: 6rem; }
+    button { padding: 20px 40px; font-size: 1.5rem; }
+    .message { font-size: 1.3rem; }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    #result-box { font-size: 5rem; }
+    button { padding: 18px 30px; font-size: 1.3rem; }
+    .message { font-size: 1.1rem; }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; margin-top: -20px;}
+    #result-box { font-size: 4rem; margin: 10px 0;}
+    button { padding: 15px 20px; font-size: 1.1rem; width: 100%; }
+    .message { font-size: 1rem; }
+    .container { padding: 25px 15px; width: 85%; }
+}
+
+/* Snowflakes */
+.snowflake {
+    position: absolute;
+    top: -20px;
+    color: #fff;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}
+
+
+
